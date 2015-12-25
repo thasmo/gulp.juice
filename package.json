@@ -1,0 +1,36 @@
+{
+  "name": "@thasmo/gulp-juice",
+  "description": "Gulp plugin to inline CSS in HTML files using Automattic's Juice.",
+  "version": "0.1.0",
+  "license": "MIT",
+  "keywords": [
+    "gulp",
+    "plugin",
+    "gulpplugin",
+    "juice",
+    "inline",
+    "embed",
+    "inject",
+    "css",
+    "stylesheet"
+  ],
+  "author": {
+    "name": "Thomas Deinhamer",
+    "email": "thasmo@gmail.com",
+    "url": "http://thasmo.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/thasmo/gulp.juice"
+  },
+  "bugs": "https://github.com/thasmo/gulp.juice/issues",
+  "files": [
+    "index.js"
+  ],
+  "main": "index.js",
+  "dependencies": {
+    "gulp-util": "~3.0",
+    "through2": "~2.0",
+    "juice": "~1.8"
+  }
+}
