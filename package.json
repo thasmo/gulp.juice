@@ -31,6 +31,6 @@
   "dependencies": {
     "gulp-util": "~3.0",
     "through2": "~2.0",
-    "juice": "~1.8"
+    "juice": "~1.9"
   }
 }
