@@ -8,6 +8,17 @@ var PLUGIN_NAME = 'gulp-juice';
 
 module.exports = function(options) {
 	var transform = function(file, encoding, callback) {
+		var self = this;
+
+		var onJuiceComplete = function(err, html) {
+			if(err) {
+				throw new Exception(err);
+			}
+			file.contents = new Buffer(html);
+			self.push(file);
+			callback();
+		}
+
 		if(file.isNull()) {
 			return callback(null, file);
 		}
@@ -17,11 +28,14 @@ module.exports = function(options) {
 		}
 
 		if(file.relative.match(/\.html?$/i)) {
-			file.contents = new Buffer(juice(file.contents.toString(), options));
-			this.push(file);
+			if(options.includeResources) {
+				juice.juiceResources(file.contents.toString(), options, onJuiceComplete);
+			} else {
+				onJuiceComplete(null, juice(file.contents.toString(), options));
+			}
+		} else {
+			callback();
 		}
-
-		callback();
 	};
 
 	return through.obj(transform);
