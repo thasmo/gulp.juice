@@ -11,10 +11,9 @@ module.exports = function(options) {
 		var self = this;
 
 		var onJuiceComplete = function(err, html) {
-			if(err) {
-				throw new Exception(err);
+			if(!err) {
+				file.contents = new Buffer(html);
 			}
-			file.contents = new Buffer(html);
 			self.push(file);
 			callback();
 		}
