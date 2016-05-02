@@ -3,22 +3,28 @@
 
 ## Usage
 ```js
-var gulp = require('gulp'),
+var gulp = require('gulp');
 var juice = require('@thasmo/gulp-juice');
 
 gulp.task('juice', function() {
   return gulp.src('*.html')
-    .pipe(juice())
+    .pipe(juice({
+      includeResources: true
+    }))
     .pipe(gulp.dest('.'))
 });
 ```
 
 ### Options
-See [Juice][juice]'s options.
+
+**includeResources** `boolean: false`<br>
+*Enables fetching of resources. Internally Juice's `juiceResources` function is used.*
+
+> See [Juice][juice]'s documentation for more options.
 
 ## License
 [MIT License][license]
 
 [gulp]: http://gulpjs.com/
 [juice]: https://github.com/Automattic/juice
-[license]: http://opensource.org/licenses/MIT
+[license]: https://thasmo.mit-license.org/

@@ -1,7 +1,7 @@
 {
   "name": "@thasmo/gulp-juice",
   "description": "Gulp plugin to inline CSS in HTML files using Automattic's Juice.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "license": "MIT",
   "keywords": [
     "gulp",
@@ -31,6 +31,6 @@
   "dependencies": {
     "gulp-util": "~3.0",
     "through2": "~2.0",
-    "juice": "~1.8"
+    "juice": "~1.10"
   }
 }
